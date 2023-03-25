@@ -213,15 +213,16 @@ figcaption {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
   inset: 0;
+  justify-content: center;
 }
 
 .hero h1 {
   color: #fff;
   font-size: clamp(4rem, 10vw + 1rem, 10rem);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-top: 5%;
+  margin-bottom: 0.5rem;
   text-shadow: 1px 1px 10px #6d7075;
 }
 
@@ -277,7 +278,8 @@ figcaption {
 
 /* Menu */
 header {
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 header ul {
@@ -334,6 +336,10 @@ header nav a[href]:hover::after {
   .card {
     flex: 1 1 45%;
   }
+
+  .panel .image-wrapper {
+    margin-top: 2rem;
+  }
 }
 
 @media (min-width: 600px) {
@@ -347,7 +353,7 @@ header nav a[href]:hover::after {
   }
 
   .panel h2 {
-    margin-top: 0;
+    margin-top: 1rem;
     font-size: 4rem;
   }
 
