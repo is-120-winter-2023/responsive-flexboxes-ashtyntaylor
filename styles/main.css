@@ -12,6 +12,14 @@
   --color-secondary: #798a37; /* moss green */
   --color-accent: #b8c979; /* wild willow */
   --color-accent-light: #aebea2; /* pale sage */
+
+  --color-1: #6d7f67;
+  --color-2: #b2c8a9;
+  --color-3: #e3e0cf;
+  --color-4: #8c9c7e;
+  --color-5: #aebea2;
+  --slide-height: 100vh;
+  --slider-height: 100%;
 }
 
 *,
@@ -182,153 +190,6 @@ footer p {
   margin: 0;
   padding: 3rem 1rem 6rem;
   text-align: center;
-}
-
-/* Contact */
-.social {
-  margin: 0;
-  padding: 0;
-}
-
-.social ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.social ul li {
-  list-style: none;
-}
-
-.social ul li a {
-  display: block;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  font-size: 40px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--color-font);
-  margin: 0 30px;
-  transition: 0.5s;
-}
-
-.social ul li a span {
-  position: absolute;
-  transition: transform 0.5s;
-}
-
-.social ul li a span:nth-child(1),
-.social ul li a span:nth-child(3) {
-  width: 100%;
-  height: 3px;
-  background: #404040;
-}
-
-.social ul li a span:nth-child(1) {
-  top: 0;
-  left: 0;
-  transform-origin: right;
-}
-
-.social ul li a:hover span:nth-child(1) {
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s;
-}
-
-.social ul li a span:nth-child(3) {
-  bottom: 0;
-  left: 0;
-  transform-origin: left;
-}
-
-.social ul li a:hover span:nth-child(3) {
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s;
-}
-
-.social ul li a span:nth-child(2),
-.social ul li a span:nth-child(4) {
-  width: 3px;
-  height: 100%;
-  background: #404040;
-}
-
-.social ul li a span:nth-child(2) {
-  top: 0;
-  left: 0;
-  transform: scale(0);
-  transform-origin: bottom;
-}
-
-.social ul li a:hover span:nth-child(2) {
-  transform: scale(1);
-  transform-origin: top;
-  transition: transform 0.5s;
-}
-
-.social ul li a span:nth-child(4) {
-  top: 0;
-  right: 0;
-  transform: scale(0);
-  transform-origin: top;
-}
-
-.social ul li a:hover span:nth-child(4) {
-  transform: scale(1);
-  transform-origin: bottom;
-  transition: transform 0.5s;
-}
-
-.social .facebook:hover {
-  color: var(--color-secondary);
-}
-
-.social .facebook:hover span {
-  background: var(--color-secondary);
-}
-
-.social .twitter:hover {
-  color: var(--color-secondary);
-}
-
-.social .twitter:hover span {
-  background: var(--color-secondary);
-}
-
-.social .instagram:hover {
-  color: var(--color-secondary);
-}
-
-.social .instagram:hover span {
-  background: var(--color-secondary);
-}
-
-.social .google:hover {
-  color: var(--color-secondary);
-}
-
-.social .google:hover span {
-  background: var(--color-secondary);
-}
-
-.social ul li a .twitter {
-  color: var(--color-secondary);
-}
-
-.social ul li a:hover:nth-child(3) {
-  color: var(--color-secondary);
-}
-
-.social ul li a:hover:nth-child(4) {
-  color: var(--color-secondary);
 }
 
 /* Hero Header */
@@ -504,6 +365,218 @@ nav li a {
 nav li a[href]:hover {
   text-decoration: underline;
   color: #fff;
+}
+
+/* About */
+
+.about body {
+  height: 100vh;
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-rows: 100vh;
+  grid-auto-flow: row;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-h > * {
+  scroll-snap-align: start;
+  /* chrome only */
+  scroll-snap-stop: always;
+
+  color: #fff;
+  height: var(--slide-height);
+  margin: 0;
+}
+
+.scroll-h img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.scroll-h .small-img {
+  padding: 20vmin;
+  object-position: 10% top;
+}
+
+.scroll-h article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-h h1,
+.scroll-h h2 {
+  margin: 0 max(1rem, 20vw);
+  color: #fff;
+}
+
+.scroll-h h1 {
+  font-size: clamp(6rem, 8vmin, 12rem);
+  line-height: 1;
+  max-width: 4em;
+}
+
+.scroll-h h2 {
+  font-size: clamp(2rem, 6vmin, 6rem);
+}
+
+.scroll-h > *:nth-child(5n + 1) {
+  background-color: var(--color-1);
+}
+.scroll-h > *:nth-child(5n + 2) {
+  background-color: var(--color-2);
+}
+.scroll-h > *:nth-child(5n + 3) {
+  background-color: var(--color-3);
+  color: var(--color-font);
+}
+.scroll-h > *:nth-child(5n + 4) {
+  background-color: var(--color-4);
+}
+.scroll-h > *:nth-child(5n + 5) {
+  background-color: var(--color-5);
+}
+
+/* Contact */
+.contact-header {
+  text-align: center;
+}
+
+.social {
+  position: relative;
+  margin-top: 100px;
+  padding: 0;
+  width: 100%;
+}
+
+.social ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.social ul li {
+  list-style: none;
+}
+
+.social ul li a {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-font);
+  margin: 0 30px;
+  transition: 0.5s;
+}
+
+.social ul li a span {
+  position: absolute;
+  transition: transform 0.5s;
+}
+
+.social ul li a span:nth-child(1),
+.social ul li a span:nth-child(3) {
+  width: 100%;
+  height: 3px;
+  background: #404040;
+}
+
+.social ul li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.social ul li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.social ul li a span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.social ul li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.social ul li a span:nth-child(2),
+.social ul li a span:nth-child(4) {
+  width: 3px;
+  height: 100%;
+  background: #404040;
+}
+
+.social ul li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+
+.social ul li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.social ul li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+
+.social ul li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+.social .facebook:hover {
+  color: var(--color-font);
+}
+
+.social .twitter:hover {
+  color: var(--color-font);
+}
+
+.social .instagram:hover {
+  color: var(--color-font);
+}
+
+.social .google:hover {
+  color: var(--color-font);
+}
+
+.social ul li a .twitter {
+  color: var(--color-font);
+}
+
+.social ul li a:hover:nth-child(3) {
+  color: var(--color-font);
+}
+
+.social ul li a:hover:nth-child(4) {
+  color: var(--color-font);
 }
 
 /* Media CSS */
