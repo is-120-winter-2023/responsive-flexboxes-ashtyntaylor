@@ -368,7 +368,6 @@ nav li a[href]:hover {
 }
 
 /* About */
-
 .about body {
   height: 100vh;
   display: grid;
@@ -428,16 +427,24 @@ nav li a[href]:hover {
 .scroll-h > *:nth-child(5n + 1) {
   background-color: var(--color-1);
 }
+
 .scroll-h > *:nth-child(5n + 2) {
   background-color: var(--color-2);
 }
+
 .scroll-h > *:nth-child(5n + 3) {
   background-color: var(--color-3);
   color: var(--color-font);
 }
+
+.scroll-h > *:nth-child(5n + 3) h2 {
+  color: var(--color-font);
+}
+
 .scroll-h > *:nth-child(5n + 4) {
   background-color: var(--color-4);
 }
+
 .scroll-h > *:nth-child(5n + 5) {
   background-color: var(--color-5);
 }
