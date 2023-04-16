@@ -368,7 +368,7 @@ nav li a[href]:hover {
 }
 
 /* About */
-.about body {
+html.scroll {
   height: 100vh;
   display: grid;
   grid-auto-columns: 100%;
@@ -378,6 +378,17 @@ nav li a[href]:hover {
   padding: 0;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
+}
+
+body.about main {
+  padding: 0;
+  max-width: none;
+}
+
+.about header {
+  position: sticky;
+  inset: 0 0 auto 0;
+  background-color: #fff;
 }
 
 .scroll-h > * {
@@ -422,6 +433,7 @@ nav li a[href]:hover {
 
 .scroll-h h2 {
   font-size: clamp(2rem, 6vmin, 6rem);
+  padding-bottom: 2rem;
 }
 
 .scroll-h > *:nth-child(5n + 1) {
